@@ -1,5 +1,4 @@
 import React from "react";
-import supabase from "./supabase";
 import { motion } from "framer-motion";
 
 function Index() {
@@ -72,17 +71,6 @@ function Index() {
 }
 
 export default Index;
-
-// This gets called on every request
-export async function getServerSideProps() {
-  // Fetch data from external API
-
-  let { data, error } = await supabase.from("test").select("*");
-
-  // Pass data to the page via props
-  return { props: { data } };
-}
-
 {
   /* <div style={{ display: "flex", flexWrap: "wrap", gap: 5 }}>
 {Array(6)
