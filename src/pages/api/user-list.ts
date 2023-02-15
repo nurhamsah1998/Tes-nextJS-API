@@ -15,12 +15,12 @@ export default function handler(
   if (req.method === "GET") {
     res.status(200).json(UserList);
   } else if (req.method === "POST") {
-    console.log(req.body);
+    const response: any = { message: "Created" };
     const body: any = {
       id: UserList?.length + 1,
       name: req.body.name,
     };
     UserList.push(body);
-    res.status(201);
+    res.status(201).json(response);
   }
 }
