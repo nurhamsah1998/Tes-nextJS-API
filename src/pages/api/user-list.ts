@@ -21,6 +21,6 @@ export default function handler(
       name: req.body.name,
     };
     UserList.push(body);
-    res.status(201).json({ message: "Created" });
+    res.status(201);
   }
 }
